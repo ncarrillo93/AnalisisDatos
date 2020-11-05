@@ -2,6 +2,7 @@ import numpy as np
 class Perceptron(object):
     """Perceptron classifier.
 
+        el pehcetrooon
         Parameters
         ------------
         eta : float
