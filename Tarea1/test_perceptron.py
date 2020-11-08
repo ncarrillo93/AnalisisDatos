@@ -72,7 +72,7 @@ import pandas as pd
 #print('URL:', s)
 #URL: https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data
 #tengo problemas con la url entonces descargue el archivo y lo abri directamente
-df = pd.read_csv('Tarea1/iris.data', header=None, encoding='utf-8')
+df = pd.read_csv('iris.data', header=None, encoding='utf-8')
 df.tail()
 df.head()
 print(df.head())
