@@ -125,7 +125,7 @@ plt.xlabel('petal length [cm]')
 plt.ylabel('petal width [cm]')
 plt.legend(loc='upper left')
 plt.savefig('img/otros_pares.png')
-#plt.show()
+plt.show()
 
 
 
