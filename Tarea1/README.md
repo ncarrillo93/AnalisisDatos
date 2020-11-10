@@ -16,6 +16,4 @@ segundo grafico no separable
 ![tres flores](img/trios.png)
 ![perceptron de setosa y virginica](img/perceptron_setosa_virginica.png)
 
-![perceptron de setosa versicolor](img/perceptron_setosa_versicolor.png)
-
 ![perceptron de versicolor virginica](img/perceptron_versicolor_virginica.png)
