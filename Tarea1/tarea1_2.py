@@ -62,7 +62,7 @@ plt.legend(loc='upper left')
 # select setosa and versicolor
 #sw_1 = df.iloc[0:100, 1].values
 sw_1 = df.iloc[0:100, 4].values
-sw_1 = np.where(sw_1 == 'Iris-setosa', -1, 1)
+sw_1 = np.where(sw_1 == 'Iris-versicolor', -1, 1)
 # extract sepal length and sepal width
 sl_1 = df.iloc[0:100, [0, 1]].values
 #plot data sepal length vs sepal width [5.1 3.5]
@@ -131,7 +131,7 @@ plt.scatter(pw_2[50:100, 0], pw_2[50:100, 1],color='blue', marker='x', label='ve
 plt.xlabel('petal length [cm]')
 plt.ylabel('petal width [cm]')
 plt.legend(loc='upper left')
-plt.savefig('img/otros_pares.png')
+# plt.savefig('img/otros_pares.png')
 #plt.show()
 
 
@@ -179,6 +179,6 @@ plt.plot(range(1, len(ppn5.errors_) + 1),ppn5.errors_, marker='o')
 plt.xlabel('Epochs')
 plt.ylabel('Number of updates')
 
-plt.savefig('img/perceptron_otros_pares.png')
+# plt.savefig('img/perceptron_otros_pares.png')
 plt.show()
 

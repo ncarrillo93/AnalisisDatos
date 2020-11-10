@@ -101,6 +101,7 @@ plt.xlabel('largo sepalo [cm]')
 plt.ylabel('ancho petalo [cm]')
 plt.legend(loc='upper left')
 
+plt.savefig('img/tres_flores.png')
 plt.show()
 
 
@@ -108,7 +109,7 @@ plt.show()
 
 
 
-#Perceptron
+#Perceptron para setoa y virginica
 ppn = perceptron(eta=0.1, n_iter=10)
 ppn.fit(x , y)
 plt.plot(range(1, len(ppn.errors_) + 1),ppn.errors_, marker='o')
