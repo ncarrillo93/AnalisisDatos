@@ -18,6 +18,4 @@ segundo grafico no separable
 
 ![perceptron de setosa versicolor](img/perceptron_setosa_versicolor.png)
 
-![perceptron de setosa virginica](img/perceptron_setosa_virginica.png)
-
 ![perceptron de versicolor virginica](img/perceptron_versicolor_virginica.png)
