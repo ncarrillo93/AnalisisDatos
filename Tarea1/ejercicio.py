@@ -109,16 +109,108 @@ plt.ylabel('ancho petalo [cm]')
 plt.legend(loc='upper left')
 
 plt.savefig('img/trios.png')
+#plt.show()
+
+#Perceptron 
+plt.subplot(231)
+plt.title("Perceptron Setosa - Versicolor")
+ppn = perceptron(eta=0.1, n_iter=10)
+ppn.fit(x , y)
+plt.plot(range(1, len(ppn.errors_) + 1),ppn.errors_, marker='o')
+plt.xlabel('Epocas')
+plt.ylabel('Numero of actualizaciones')
+
+plt.subplot(232)
+ppn = perceptron(eta=0.1, n_iter=10)
+ppn.fit(x_1 , y)
+plt.plot(range(1, len(ppn.errors_) + 1),ppn.errors_, marker='o')
+plt.xlabel('Epocas')
+plt.ylabel('Numero of actualizaciones')
+
+plt.subplot(233)
+ppn = perceptron(eta=0.1, n_iter=10)
+ppn.fit(x_2 , y)
+plt.plot(range(1, len(ppn.errors_) + 1),ppn.errors_, marker='o')
+plt.xlabel('Epocas')
+plt.ylabel('Numero of actualizaciones')
+
+plt.subplot(234)
+ppn = perceptron(eta=0.1, n_iter=10)
+ppn.fit(x_3 , y)
+plt.plot(range(1, len(ppn.errors_) + 1),ppn.errors_, marker='o')
+plt.xlabel('Epocas')
+plt.ylabel('Numero of actualizaciones')
+
+plt.subplot(235)
+ppn = perceptron(eta=0.1, n_iter=10)
+ppn.fit(x_4 , y)
+plt.plot(range(1, len(ppn.errors_) + 1),ppn.errors_, marker='o')
+plt.xlabel('Epocas')
+plt.ylabel('Numero of actualizaciones')
+
+plt.subplot(236)
+ppn = perceptron(eta=0.1, n_iter=10)
+ppn.fit(x_5 , y)
+plt.plot(range(1, len(ppn.errors_) + 1),ppn.errors_, marker='o')
+plt.xlabel('Epocas')
+plt.ylabel('Numero of actualizaciones')
+plt.savefig('img/perceptron_setosa_versicolor.png')
 plt.show()
 
-#Perceptron
+#Perceptron 
 plt.subplot(231)
+plt.title("Perceptron Setosa - Virginica")
+ppn = perceptron(eta=0.1, n_iter=10)
+ppn.fit(x , y_1)
+plt.plot(range(1, len(ppn.errors_) + 1),ppn.errors_, marker='o')
+plt.xlabel('Epocas')
+plt.ylabel('Numero of actualizaciones')
+
+plt.subplot(232)
+ppn = perceptron(eta=0.1, n_iter=10)
+ppn.fit(x_1 , y_1)
+plt.plot(range(1, len(ppn.errors_) + 1),ppn.errors_, marker='o')
+plt.xlabel('Epocas')
+plt.ylabel('Numero of actualizaciones')
+
+plt.subplot(233)
+ppn = perceptron(eta=0.1, n_iter=10)
+ppn.fit(x_2 , y_1)
+plt.plot(range(1, len(ppn.errors_) + 1),ppn.errors_, marker='o')
+plt.xlabel('Epocas')
+plt.ylabel('Numero of actualizaciones')
+
+plt.subplot(234)
+ppn = perceptron(eta=0.1, n_iter=10)
+ppn.fit(x_3 , y_1)
+plt.plot(range(1, len(ppn.errors_) + 1),ppn.errors_, marker='o')
+plt.xlabel('Epocas')
+plt.ylabel('Numero of actualizaciones')
+
+plt.subplot(235)
+ppn = perceptron(eta=0.1, n_iter=10)
+ppn.fit(x_4 , y_1)
+plt.plot(range(1, len(ppn.errors_) + 1),ppn.errors_, marker='o')
+plt.xlabel('Epocas')
+plt.ylabel('Numero of actualizaciones')
+
+plt.subplot(236)
+ppn = perceptron(eta=0.1, n_iter=10)
+ppn.fit(x_5 , y_1)
+plt.plot(range(1, len(ppn.errors_) + 1),ppn.errors_, marker='o')
+plt.xlabel('Epocas')
+plt.ylabel('Numero of actualizaciones')
+plt.savefig('img/perceptron_setosa_virginica.png')
+plt.show()
+
+#Percerptron versicolor-virginica
+plt.subplot(231)
+plt.title("Perceptron versicolor-virginica")
 ppn = perceptron(eta=0.1, n_iter=10)
 ppn.fit(x , y_2)
 plt.plot(range(1, len(ppn.errors_) + 1),ppn.errors_, marker='o')
 plt.xlabel('Epocas')
 plt.ylabel('Numero of actualizaciones')
-
 
 plt.subplot(232)
 ppn = perceptron(eta=0.1, n_iter=10)
@@ -148,8 +240,6 @@ plt.plot(range(1, len(ppn.errors_) + 1),ppn.errors_, marker='o')
 plt.xlabel('Epocas')
 plt.ylabel('Numero of actualizaciones')
 
-
-#Perceptron para setoa y virginica
 plt.subplot(236)
 ppn = perceptron(eta=0.1, n_iter=10)
 ppn.fit(x_5 , y_2)
@@ -158,3 +248,5 @@ plt.xlabel('Epocas')
 plt.ylabel('Numero of actualizaciones')
 plt.savefig('img/perceptron_versicolor_virginica.png')
 plt.show()
+
+
