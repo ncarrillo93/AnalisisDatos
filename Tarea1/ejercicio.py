@@ -60,6 +60,8 @@ print(x_4[0])
 print(x_5[0])
 
 #Impresion de los datos largo de sepalo y ancho de sepalo
+plt.figure(figsize=(14,10)) #tamaño grafico
+
 plt.subplot(231)
 plt.scatter(x[:50, 0]   , x[:50    , 1], color='red'  , marker='o', label='setosa'    )
 plt.scatter(x[50:100, 0], x[50:100 , 1], color='blue' , marker='o', label='versicolor')
@@ -112,6 +114,8 @@ plt.savefig('img/trios.png')
 plt.show()
 
 #Perceptron
+# tamaño grafico
+plt.figure(figsize=(14,10))
 plt.subplot(231)
 ppn = perceptron(eta=0.1, n_iter=10)
 ppn.fit(x , y_2)
