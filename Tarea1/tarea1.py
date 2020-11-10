@@ -1,4 +1,8 @@
 import numpy as np
+import matplotlib.pyplot as plt
+import os
+import pandas as pd
+
 class Perceptron(object):
 
     def __init__(self, eta=0.01, n_iter=50, random_state=1):
@@ -28,28 +32,17 @@ class Perceptron(object):
     def predict(self, X):
         """Return class label after unit step"""
         return np.where(self.net_input(X) >= 0.0, 1, -1)
-
-
-import os
-import pandas as pd
-
-#s = os.path.join('iris.data')
-#print('URL:', s)
-#URL: https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data
-#tengo problemas con la url entonces descargue el archivo y lo abri directamente
 df = pd.read_csv('iris.data', header=None, encoding='utf-8')
 df.tail()
 df.head()
-# print(df.head())
-# print(df.tail())
 
-import matplotlib.pyplot as plt
-import numpy as np
 # select setosa and versicolor
 y = df.iloc[0:100, 4].values
 y = np.where(y == 'Iris-setosa', -1, 1)
 # extract sepal length and petal length
 X = df.iloc[0:100, [0, 2]].values
+
+
 # plot data sepal length vs petal length (sl,pl) [5.1 1.4] 1era coord
 plt.subplot(231)
 plt.scatter(X[:50, 0], X[:50, 1],color='red', marker='o', label='setosa')
@@ -87,10 +80,10 @@ plt.scatter(sl_2[50:100, 0], sl_2[50:100, 1],color='blue', marker='x', label='ve
 plt.xlabel('sepal length [cm]')
 plt.ylabel('petal width [cm]')
 plt.legend(loc='upper left')
-# plt.show()
+#plt.show()
 
 # select setosa and versicolor
-# sw_2 = df.iloc[0:100, 2].values
+#sw_2 = df.iloc[0:100, 2].values
 sw_2 = df.iloc[0:100, 4].values
 sw_2 = np.where(sw_2 == 'Iris-setosa', -1, 1)
 # extract sepal width and petal length
@@ -102,7 +95,7 @@ plt.scatter(pl[50:100, 0], pl[50:100, 1],color='blue', marker='x', label='versic
 plt.xlabel('sepal width [cm]')
 plt.ylabel('petal width [cm]')
 plt.legend(loc='upper left')
-# plt.show()
+#plt.show()
 
 # select setosa and versicolor
 sw_3 = df.iloc[0:100, 4].values
@@ -116,7 +109,7 @@ plt.scatter(pw[50:100, 0], pw[50:100, 1],color='blue', marker='x', label='versic
 plt.xlabel('sepal width [cm]')
 plt.ylabel('petal width [cm]')
 plt.legend(loc='upper left')
-# plt.show()
+#plt.show()
 
 # select setosa and versicolor
 pl_2 = df.iloc[0:100, 4].values
@@ -133,6 +126,9 @@ plt.ylabel('petal width [cm]')
 plt.legend(loc='upper left')
 plt.savefig('img/otros_pares.png')
 #plt.show()
+
+
+
 
 
 #Perceptron
@@ -180,4 +176,4 @@ plt.xlabel('Epochs')
 plt.ylabel('Number of updates')
 
 plt.savefig('img/perceptron_otros_pares.png')
-#plt.show()
+plt.show()

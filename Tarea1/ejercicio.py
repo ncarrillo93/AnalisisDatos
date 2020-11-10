@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import os
 import matplotlib.pyplot as plt
-
+from matplotlib.colors import ListedColormap
 #Clase perceptron
 class perceptron(object):
     
@@ -32,59 +32,86 @@ class perceptron(object):
     def predict(self, x):
         return np.where(self.net_input(x) >= 0.0, 1, -1)
 
-#Codigo Principal
+#Codigo Principal - Largo de sepalo, ancho de sepalo, largo de petalo, ancho de petalo, especie
 df = pd.read_csv('iris.data', header=None, encoding='utf-8')
-df.tail()
-df.head()
-print(df.head())
-print(df.tail())
-#Seleccion de setosa y versicolor
-y = df.iloc[0:100, 4].values
-y = np.where(y == 'Iris-setosa', -1, 1)
-#Extraer largo sepal y largo petalo
-x = df.iloc[0:100, [0, 2]].values
-#Impresion de los datos
-plt.scatter(x[:50, 0], x[:50, 1],color='red', marker='o', label='setosa')
-plt.scatter(x[50:100, 0], x[50:100, 1],color='blue', marker='x', label='versicolor')
-plt.xlabel('sepal length [cm]')
-plt.ylabel('petal length [cm]')
+
+y   = df.iloc[0:150, 4].values
+y   = np.where(y == 'Iris-setosa', -1, 1)
+
+y_1 = df.iloc[0:150, 4].values 
+y_1 = np.where(y_1 =='Iris-versicolor',-1,1)
+
+y_2 = df.iloc[0:150, 4].values
+y_2 = np.where(y_2 =='Iris-virginica', -1, 1) 
+
+#Extraer largo de sepalo y ancho de sepalo
+x   = df.iloc[0:150, [0,1]].values
+x_1 = df.iloc[0:150, [0,2]].values
+x_2 = df.iloc[0:150, [0,3]].values
+x_3 = df.iloc[0:150, [1,0]].values
+x_4 = df.iloc[0:150, [1,2]].values
+x_5 = df.iloc[0:150, [1,3]].values
+
+#Impresion de los datos largo de sepalo y ancho de sepalo
+plt.subplot(231)
+plt.scatter(x[:50, 0]   , x[:50    , 1], color='red'  , marker='o', label='setosa'    )
+plt.scatter(x[50:100, 0], x[50:100 , 1], color='blue' , marker='o', label='versicolor')
+plt.scatter(x[100:150,0], x[100:150, 1], color='green', marker='o', label='virginica' )
+plt.xlabel('largo sepalo [cm]')
+plt.ylabel('ancho petalo [cm]')
 plt.legend(loc='upper left')
+
+plt.subplot(232)
+plt.scatter(x_1[:50, 0]   , x_1[:50    , 1], color='red'  , marker='o', label='setosa'    )
+plt.scatter(x_1[50:100, 0], x_1[50:100 , 1], color='blue' , marker='o', label='versicolor')
+plt.scatter(x_1[100:150,0], x_1[100:150, 1], color='green', marker='o', label='virginica' )
+plt.xlabel('largo sepalo [cm]')
+plt.ylabel('ancho petalo [cm]')
+plt.legend(loc='upper left')
+
+plt.subplot(233)
+plt.scatter(x_2[:50, 0]   , x_2[:50    , 1], color='red'  , marker='o', label='setosa'    )
+plt.scatter(x_2[50:100, 0], x_2[50:100 , 1], color='blue' , marker='o', label='versicolor')
+plt.scatter(x_2[100:150,0], x_2[100:150, 1], color='green', marker='o', label='virginica' )
+plt.xlabel('largo sepalo [cm]')
+plt.ylabel('ancho petalo [cm]')
+plt.legend(loc='upper left')
+
+plt.subplot(234)
+plt.scatter(x_3[:50, 0]   , x_3[:50    , 1], color='red'  , marker='o', label='setosa'    )
+plt.scatter(x_3[50:100, 0], x_3[50:100 , 1], color='blue' , marker='o', label='versicolor')
+plt.scatter(x_3[100:150,0], x_3[100:150, 1], color='green', marker='o', label='virginica' )
+plt.xlabel('largo sepalo [cm]')
+plt.ylabel('ancho petalo [cm]')
+plt.legend(loc='upper left')
+
+plt.subplot(235)
+plt.scatter(x_4[:50, 0]   , x_4[:50    , 1], color='red'  , marker='o', label='setosa'    )
+plt.scatter(x_4[50:100, 0], x_4[50:100 , 1], color='blue' , marker='o', label='versicolor')
+plt.scatter(x_4[100:150,0], x_4[100:150, 1], color='green', marker='o', label='virginica' )
+plt.xlabel('largo sepalo [cm]')
+plt.ylabel('ancho petalo [cm]')
+plt.legend(loc='upper left')
+
+plt.subplot(236)
+plt.scatter(x_5[:50, 0]   , x_5[:50    , 1], color='red'  , marker='o', label='setosa'    )
+plt.scatter(x_5[50:100, 0], x_5[50:100 , 1], color='blue' , marker='o', label='versicolor')
+plt.scatter(x_5[100:150,0], x_5[100:150, 1], color='green', marker='o', label='virginica' )
+plt.xlabel('largo sepalo [cm]')
+plt.ylabel('ancho petalo [cm]')
+plt.legend(loc='upper left')
+
 plt.show()
+
+
+
+
+
+
 #Perceptron
 ppn = perceptron(eta=0.1, n_iter=10)
 ppn.fit(x , y)
 plt.plot(range(1, len(ppn.errors_) + 1),ppn.errors_, marker='o')
-plt.xlabel('Epochs')
-plt.ylabel('Number of updates')
-plt.show()
-
-from matplotlib.colors import ListedColormap
-
-def plot_decision_regions(X,y,classifier,resolution=0.02):
-    #configuracion marker generator y colormap
-    markers=('s','x','o','^','v')
-    colors=('red','blue','lightgreen','gray','cyan')
-    cmap=ListedColormap(colors[:len(np.unique(y))])
-
-    #plot superficie de desicion
-    x1_min, x1_max=x[:,0].min()-1, x[:,0].max() +1
-    x2_min, x2_max=x[:,1].min()-1, x[:,0].max() +1
-    xx1, xx2 = np.meshgrid(np.arange(x1_min,x1_max,resolution), np.arange(x2_min,x2_max,resolution))
-    z=classifier.predict(np.array( [xx1.ravel(), xx2.ravel() ]).T )
-    z=z.reshape(xx1.shape)
-    plt.xlim(xx1.min(), xx1.max())
-    plt.ylim(xx2.min(), xx2.max())
-
-    #plot clase ejemplo
-    for idx, cl in enumerate(np.unique(y)):
-        plt.scatter(x=X[y==cl, 0], 
-                    y=X[y==cl, 1],
-                    c=colors[idx],
-                    marker=markers[idx],
-                    label=cl,
-                    edgecolor='black')
-plot_decision_regions(x, y, classifier=ppn)
-plt.xlabel('sepal length [cm]')
-plt.ylabel('petal length [cm]')
-plt.legend(loc='upper left')
-plt.show()
+plt.xlabel('Epocas')
+plt.ylabel('Number of actualizaciones')
+#plt.show()

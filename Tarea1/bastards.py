@@ -75,7 +75,7 @@ from IPython.display import clear_output
 neural_n = create_nn(topology, sigm)
 
 loss=[]
-for i in range(50000):
+for i in range(5000):
     #entrenemos al rojo
     pY= train(neural_n, X,Y,l2_cost,lr=0.05)
     if i%25 == 0:
