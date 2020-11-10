@@ -60,6 +60,8 @@ print(x_4[0])
 print(x_5[0])
 
 #Impresion de los datos largo de sepalo y ancho de sepalo
+plt.figure(figsize=(14,10)) #tamaño grafico
+
 plt.subplot(231)
 plt.scatter(x[:50, 0]   , x[:50    , 1], color='red'  , marker='o', label='setosa'    )
 plt.scatter(x[50:100, 0], x[50:100 , 1], color='blue' , marker='o', label='versicolor')
@@ -157,7 +159,9 @@ plt.ylabel('Numero of actualizaciones')
 plt.savefig('img/perceptron_setosa_versicolor.png')
 plt.show()
 
-#Perceptron 
+#Perceptron
+# tamaño grafico
+plt.figure(figsize=(14,10))
 plt.subplot(231)
 plt.title("Perceptron Setosa - Virginica")
 ppn = perceptron(eta=0.1, n_iter=10)

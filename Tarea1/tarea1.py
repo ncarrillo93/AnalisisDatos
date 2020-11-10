@@ -42,7 +42,7 @@ y = np.where(y == 'Iris-setosa', -1, 1)
 # extract sepal length and petal length
 X = df.iloc[0:100, [0, 2]].values
 
-
+plt.figure(figsize=(14,10))
 # plot data sepal length vs petal length (sl,pl) [5.1 1.4] 1era coord
 plt.subplot(231)
 plt.scatter(X[:50, 0], X[:50, 1],color='red', marker='o', label='setosa')
@@ -124,6 +124,8 @@ plt.scatter(pw_2[50:100, 0], pw_2[50:100, 1],color='blue', marker='x', label='ve
 plt.xlabel('petal length [cm]')
 plt.ylabel('petal width [cm]')
 plt.legend(loc='upper left')
+
+
 plt.savefig('img/otros_pares.png')
 plt.show()
 
@@ -134,6 +136,7 @@ plt.show()
 #Perceptron
 ppn = Perceptron(eta=0.1, n_iter=10)
 ppn.fit(X, y)
+plt.figure(figsize=(14,10))
 plt.subplot(231)
 plt.plot(range(1, len(ppn.errors_) + 1),ppn.errors_, marker='o')
 plt.xlabel('Epochs')
@@ -174,6 +177,7 @@ plt.subplot(236)
 plt.plot(range(1, len(ppn5.errors_) + 1),ppn5.errors_, marker='o')
 plt.xlabel('Epochs')
 plt.ylabel('Number of updates')
+
 
 plt.savefig('img/perceptron_otros_pares.png')
 plt.show()
