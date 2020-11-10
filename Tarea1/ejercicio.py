@@ -48,9 +48,16 @@ y_2 = np.where(y_2 =='Iris-virginica', -1, 1)
 x   = df.iloc[0:150, [0,1]].values
 x_1 = df.iloc[0:150, [0,2]].values
 x_2 = df.iloc[0:150, [0,3]].values
-x_3 = df.iloc[0:150, [1,0]].values
-x_4 = df.iloc[0:150, [1,2]].values
-x_5 = df.iloc[0:150, [1,3]].values
+x_3 = df.iloc[0:150, [1,2]].values
+x_4 = df.iloc[0:150, [1,3]].values
+x_5 = df.iloc[0:150, [2,3]].values
+
+print(x[0])
+print(x_1[0])
+print(x_2[0])
+print(x_3[0])
+print(x_4[0])
+print(x_5[0])
 
 #Impresion de los datos largo de sepalo y ancho de sepalo
 plt.subplot(231)
@@ -58,7 +65,7 @@ plt.scatter(x[:50, 0]   , x[:50    , 1], color='red'  , marker='o', label='setos
 plt.scatter(x[50:100, 0], x[50:100 , 1], color='blue' , marker='o', label='versicolor')
 plt.scatter(x[100:150,0], x[100:150, 1], color='green', marker='o', label='virginica' )
 plt.xlabel('largo sepalo [cm]')
-plt.ylabel('ancho petalo [cm]')
+plt.ylabel('ancho sepalo [cm]')
 plt.legend(loc='upper left')
 
 plt.subplot(232)
@@ -66,7 +73,7 @@ plt.scatter(x_1[:50, 0]   , x_1[:50    , 1], color='red'  , marker='o', label='s
 plt.scatter(x_1[50:100, 0], x_1[50:100 , 1], color='blue' , marker='o', label='versicolor')
 plt.scatter(x_1[100:150,0], x_1[100:150, 1], color='green', marker='o', label='virginica' )
 plt.xlabel('largo sepalo [cm]')
-plt.ylabel('ancho petalo [cm]')
+plt.ylabel('largo petalo [cm]')
 plt.legend(loc='upper left')
 
 plt.subplot(233)
@@ -101,18 +108,53 @@ plt.xlabel('largo sepalo [cm]')
 plt.ylabel('ancho petalo [cm]')
 plt.legend(loc='upper left')
 
-plt.savefig('img/tres_flores.png')
+plt.savefig('img/trios.png')
 plt.show()
 
-
-
-
-
-
-#Perceptron para setoa y virginica
+#Perceptron
+plt.subplot(231)
 ppn = perceptron(eta=0.1, n_iter=10)
-ppn.fit(x , y)
+ppn.fit(x , y_2)
 plt.plot(range(1, len(ppn.errors_) + 1),ppn.errors_, marker='o')
 plt.xlabel('Epocas')
 plt.ylabel('Number of actualizaciones')
-#plt.show()
+
+
+plt.subplot(232)
+ppn = perceptron(eta=0.1, n_iter=10)
+ppn.fit(x_1 , y_2)
+plt.plot(range(1, len(ppn.errors_) + 1),ppn.errors_, marker='o')
+plt.xlabel('Epocas')
+plt.ylabel('Number of actualizaciones')
+
+plt.subplot(233)
+ppn = perceptron(eta=0.1, n_iter=10)
+ppn.fit(x_2 , y_2)
+plt.plot(range(1, len(ppn.errors_) + 1),ppn.errors_, marker='o')
+plt.xlabel('Epocas')
+plt.ylabel('Number of actualizaciones')
+
+plt.subplot(234)
+ppn = perceptron(eta=0.1, n_iter=10)
+ppn.fit(x_3 , y_2)
+plt.plot(range(1, len(ppn.errors_) + 1),ppn.errors_, marker='o')
+plt.xlabel('Epocas')
+plt.ylabel('Number of actualizaciones')
+
+plt.subplot(235)
+ppn = perceptron(eta=0.1, n_iter=10)
+ppn.fit(x_4 , y_2)
+plt.plot(range(1, len(ppn.errors_) + 1),ppn.errors_, marker='o')
+plt.xlabel('Epocas')
+plt.ylabel('Number of actualizaciones')
+
+
+#Perceptron para setoa y virginica
+plt.subplot(236)
+ppn = perceptron(eta=0.1, n_iter=10)
+ppn.fit(x_5 , y_2)
+plt.plot(range(1, len(ppn.errors_) + 1),ppn.errors_, marker='o')
+plt.xlabel('Epocas')
+plt.ylabel('Number of actualizaciones')
+plt.savefig('img/perceptron_versicolor_virginica.png')
+plt.show()

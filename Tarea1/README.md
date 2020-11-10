@@ -13,4 +13,5 @@ segundo grafico no separable
 ![perceptron de todos los pares](img/perceptron_otros_pares.png)
 3) Repetir 1) y 2) con otro par de flores
 
-![tres flores](img/tres_flores.png)
+![tres flores](img/trios.png)
+![perceptron de todos los pares](img/perceptron_versicolor_virginica.png)
