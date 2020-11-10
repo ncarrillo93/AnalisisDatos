@@ -61,7 +61,6 @@ print(x_5[0])
 
 #Impresion de los datos largo de sepalo y ancho de sepalo
 plt.figure(figsize=(14,10)) #tamaño grafico
-
 plt.subplot(231)
 plt.scatter(x[:50, 0]   , x[:50    , 1], color='red'  , marker='o', label='setosa'    )
 plt.scatter(x[50:100, 0], x[50:100 , 1], color='blue' , marker='o', label='versicolor')
@@ -109,11 +108,11 @@ plt.scatter(x_5[100:150,0], x_5[100:150, 1], color='green', marker='o', label='v
 plt.xlabel('largo petalo [cm]')
 plt.ylabel('ancho petalo [cm]')
 plt.legend(loc='upper left')
-
 plt.savefig('img/trios.png')
-#plt.show()
+plt.show()
 
 #Perceptron 
+plt.figure(figsize=(14,10))
 plt.subplot(231)
 plt.title("Perceptron Setosa - Versicolor")
 ppn = perceptron(eta=0.1, n_iter=10)
@@ -208,6 +207,7 @@ plt.savefig('img/perceptron_setosa_virginica.png')
 plt.show()
 
 #Percerptron versicolor-virginica
+plt.figure(figsize=(14,10))
 plt.subplot(231)
 plt.title("Perceptron versicolor-virginica")
 ppn = perceptron(eta=0.1, n_iter=10)
