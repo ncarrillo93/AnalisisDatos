@@ -125,7 +125,7 @@ plt.xlabel('petal length [cm]')
 plt.ylabel('petal width [cm]')
 plt.legend(loc='upper left')
 plt.savefig('img/otros_pares.png')
-#plt.show()
+plt.show()
 
 
 
@@ -138,7 +138,7 @@ plt.subplot(231)
 plt.plot(range(1, len(ppn.errors_) + 1),ppn.errors_, marker='o')
 plt.xlabel('Epochs')
 plt.ylabel('Number of updates')
-plt.show()
+# plt.show()
 
 ppn1 = Perceptron(eta=0.1, n_iter=10)
 ppn1.fit(sl_1, sw_1)
