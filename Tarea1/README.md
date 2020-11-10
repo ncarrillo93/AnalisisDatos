@@ -14,6 +14,7 @@ segundo grafico no separable
 3) Repetir 1) y 2) con otro par de flores
 
 ![tres flores](img/trios.png)
+#### Segun nosotros son separables. Pero el grafico dice lo contrario
 ![perceptron de setosa y virginica](img/perceptron_setosa_virginica.png)
 
 ![perceptron de versicolor virginica](img/perceptron_versicolor_virginica.png)
