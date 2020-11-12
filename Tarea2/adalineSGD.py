@@ -92,18 +92,51 @@ def plot_decision_regions(X, y, classifier, resolution=0.02) :
 df = pd.read_csv('Tarea2/iris.data', header=None, encoding='utf-8')
 y   = df.iloc[0:100, 4].values
 y   = np.where(y == 'Iris-setosa', -1, 1)
+
+y_1 = df.iloc[0:100, 4].values
+y_1 = np.where(y_1 == 'Iris-versicolor', 1, -1)
+
+y_2 = df.iloc[0:100, 4].values
+y_2 = np.where(y_2 == 'Iris-virginica', -1, 1)
 #Extraer largo de sepalo y ancho de sepalo
-X   = df.iloc[0:100, [0,2]].values
+X   = df.iloc[0:100, [0,1]].values
 X_std = np.copy(X)
 X_std[:,0] = (X[:,0] - X[:,0].mean()) / X[:,0].std()
 X_std[:,1] = (X[:,1] - X[:,1].mean()) / X[:,1].std()
 
-ada_sgd = AdalineSGD(n_iter=15, eta=0.01, random_state=1)
-ada_sgd.fit(X_std, y)
-plot_decision_regions(X_std, y, classifier=ada_sgd)
+X1   = df.iloc[0:100, [0,2]].values
+X1_std = np.copy(X1)
+X1_std[:,0] = (X1[:,0] - X1[:,0].mean()) / X1[:,0].std()
+X1_std[:,1] = (X1[:,1] - X1[:,1].mean()) / X1[:,1].std()
+
+X2   = df.iloc[0:100, [0,3]].values
+X2_std = np.copy(X2)
+X2_std[:,0] = (X2[:,0] - X2[:,0].mean()) / X2[:,0].std()
+X2_std[:,1] = (X2[:,1] - X2[:,1].mean()) / X2[:,1].std()
+
+X3   = df.iloc[0:100, [1,2]].values
+X3_std = np.copy(X3)
+X3_std[:,0] = (X3[:,0] - X3[:,0].mean()) / X3[:,0].std()
+X3_std[:,1] = (X3[:,1] - X3[:,1].mean()) / X3[:,1].std()
+
+X4   = df.iloc[0:100, [1,3]].values
+X4_std = np.copy(X4)
+X4_std[:,0] = (X4[:,0] - X4[:,0].mean()) / X4[:,0].std()
+X4_std[:,1] = (X4[:,1] - X4[:,1].mean()) / X4[:,1].std()
+
+X5   = df.iloc[0:100, [2,3]].values
+X5_std = np.copy(X5)
+X5_std[:,0] = (X5[:,0] - X5[:,0].mean()) / X5[:,0].std()
+X5_std[:,1] = (X5[:,1] - X5[:,1].mean()) / X5[:,1].std()
+
+
+
+ada_sgd = AdalineSGD(n_iter=10000, eta=0.0001, random_state=1)
+ada_sgd.fit(X1_std, y_1)
+plot_decision_regions(X1_std, y_1, classifier=ada_sgd)
 plt.title('Adaline - Stochastic Gradient Descent')
-plt.xlabel('sepal length [standardized]')
-plt.ylabel('petal length [standardized]')
+plt.xlabel('Largo Sepalo [standardized]')
+plt.ylabel('Largo Petalo [standardized]')
 plt.legend(loc='upper left')
 plt.tight_layout()
 plt.show()
