@@ -1,4 +1,3 @@
-
 import numpy as np
 import pandas as pd
 import os
@@ -33,7 +32,7 @@ class perceptron(object):
         return np.where(self.net_input(x) >= 0.0, 1, -1)
 
 #Codigo Principal - Largo de sepalo, ancho de sepalo, largo de petalo, ancho de petalo, especie
-df = pd.read_csv('iris.data', header=None, encoding='utf-8')
+df = pd.read_csv('Tarea1/iris.data', header=None, encoding='utf-8')
 
 y   = df.iloc[0:150, 4].values
 y   = np.where(y == 'Iris-setosa', -1, 1)
@@ -108,7 +107,7 @@ plt.scatter(x_5[100:150,0], x_5[100:150, 1], color='green', marker='o', label='v
 plt.xlabel('largo petalo [cm]')
 plt.ylabel('ancho petalo [cm]')
 plt.legend(loc='upper left')
-plt.savefig('img/trios.png')
+plt.savefig('Tarea1/img/trios.png')
 plt.show()
 
 #Perceptron 
@@ -155,7 +154,7 @@ ppn.fit(x_5 , y)
 plt.plot(range(1, len(ppn.errors_) + 1),ppn.errors_, marker='o')
 plt.xlabel('Epocas')
 plt.ylabel('Numero of actualizaciones')
-plt.savefig('img/perceptron_setosa_versicolor.png')
+plt.savefig('Tarea1/img/perceptron_setosa_versicolor.png')
 plt.show()
 
 #Perceptron
@@ -203,7 +202,7 @@ ppn.fit(x_5 , y_1)
 plt.plot(range(1, len(ppn.errors_) + 1),ppn.errors_, marker='o')
 plt.xlabel('Epocas')
 plt.ylabel('Numero of actualizaciones')
-plt.savefig('img/perceptron_setosa_virginica.png')
+plt.savefig('Tarea1/img/perceptron_setosa_virginica.png')
 plt.show()
 
 #Percerptron versicolor-virginica
@@ -250,7 +249,7 @@ ppn.fit(x_5 , y_2)
 plt.plot(range(1, len(ppn.errors_) + 1),ppn.errors_, marker='o')
 plt.xlabel('Epocas')
 plt.ylabel('Numero of actualizaciones')
-plt.savefig('img/perceptron_versicolor_virginica.png')
+plt.savefig('Tarea1/img/perceptron_versicolor_virginica.png')
 plt.show()
 
 
