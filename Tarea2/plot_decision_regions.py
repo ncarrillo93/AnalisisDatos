@@ -4,6 +4,7 @@ import os
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 #Clase perceptron
+ws  =   []
 class perceptron(object):
     def __init__(self,eta=0.01,n_iter=50,random_state=1):
         self.eta=eta
@@ -13,6 +14,7 @@ class perceptron(object):
     def fit(self, x, y):
         rgen = np.random.RandomState(self.random_state)
         self.w_=rgen.normal(loc=0.0, scale= 0.01, size=1 + x.shape[1])
+        ws.append(rgen.normal(loc=0.0, scale= 0.01, size=1 + x.shape[1]))
         self.errors_=[]
         for _ in range(self.n_iter):
             errors = 0
@@ -52,7 +54,7 @@ def plot_decision_regions(X, y, clasiffier, resolution=0.02) :
         plt.scatter(x=X[y== cl,0], y = X[y == cl, 1], alpha=0.8, c=colors[idx], marker=markers[idx], label=cl, edgecolor='black')
 
 #Codigo Principal - Largo de sepalo, ancho de sepalo, largo de petalo, ancho de petalo, especie
-df = pd.read_csv('Tarea1/iris.data', header=None, encoding='utf-8')
+df = pd.read_csv('iris.data', header=None, encoding='utf-8')
 y   = df.iloc[0:100, 4].values
 y   = np.where(y == 'Iris-setosa', -1, 1)
 #Extraer largo de sepalo y ancho de sepalo
@@ -69,5 +71,14 @@ plot_decision_regions(x, y, clasiffier=ppn)
 plt.xlabel('Largo Sepalo [cm]')
 plt.xlabel('Largo Sepalo [cm]')
 plt.legend(loc='upper left')
+plt.show()
+
+
+# ploteo w
+print(ws.get_text())
+plt.plot(ws)
+plt.title("w's")
+plt.xlabel("iteracion")
+plt.ylabel("w")
 plt.show()
          
