@@ -4,7 +4,9 @@ import os
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 #Clase perceptron
+
 ws  =   []
+
 class perceptron(object):
     def __init__(self,eta=0.01,n_iter=50,random_state=1):
         self.eta=eta
@@ -57,6 +59,8 @@ def plot_decision_regions(X, y, clasiffier, resolution=0.02) :
 df = pd.read_csv('iris.data', header=None, encoding='utf-8')
 y   = df.iloc[0:100, 4].values
 y   = np.where(y == 'Iris-setosa', -1, 1)
+
+
 #Extraer largo de sepalo y ancho de sepalo
 x   = df.iloc[0:100, [0,2]].values
 
@@ -82,3 +86,4 @@ plt.xlabel("iteracion")
 plt.ylabel("w")
 plt.show()
          
+print(str(ws))
