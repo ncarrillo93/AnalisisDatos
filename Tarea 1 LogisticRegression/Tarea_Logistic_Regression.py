@@ -47,10 +47,15 @@ X_test_std = escalar.transform(X_test)
 
 ## Definicion del algoritmo a utilizar LOGISTIC REGRESSION
 from sklearn.linear_model import LogisticRegression
-LogisticRegression = LogisticRegression(C=100, random_state=1, solver='newton-cg',multi_class='auto')
+lr = LogisticRegression(C=100, random_state=1, solver='lbfgs',multi_class='auto')
 #entrenamiento del modelo
-LogisticRegression.fit(X_train,y_train)
-y_pred = LogisticRegression.predict(X_test)
+lr.fit(X_train,y_train)
+y_pred = lr.predict(X_test)
+
+X_combined_std = np.vstack((X_train_std, X_test_std))
+y_combined = np.hstack((y_train, y_test))
+plot_decision_regions(X_combined_std ,y_combined, classifier=lr, test_idx=range(0,569))
+plt.show()
 #Verificacion
 from sklearn.metrics import confusion_matrix
 matriz = confusion_matrix(y_test, y_pred)

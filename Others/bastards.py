@@ -56,7 +56,6 @@ def train(neural_net, X, Y, l2_cost, lr=0.5, train=True):
 
             z = out[l+1][0]
             a = out[l+1][1]
-            print(a.shape)
 
             if l == len(neural_net)-1:
                 deltas.insert(0, l2_cost[1](a, Y) * neural_net[l].act_f[1](a))
