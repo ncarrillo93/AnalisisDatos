@@ -1,75 +1,57 @@
-import matplotlib.pyplot as plt 
-from matplotlib.colors import ListedColormap
-import numpy as np
-from sklearn import datasets 
-
-def plot_decision_regions(X, y, classifier, test_idx=None, resolution=0.02) :
-
-    #Setup market generator and colormap
-    markers = ('s', 'x', 'o', '^', 'v')
-    colors = ('red', 'blue','lightgreen', 'gray', 'cyan')
-    cmap = ListedColormap(colors[:len(np.unique(y)) ] )
-    # plot the decision surface
-    x1_min, x1_max = X[:,0].min() -1, X[:, 0].max() + 1
-    x2_min, x2_max = X[:,1].min() -1, X[:, 1].max() + 1
-    xx1, xx2 = np.meshgrid(np.arange(x1_min, x1_max, resolution),
-                           np.arange(x2_min, x2_max, resolution))
-    Z = classifier.predict(np.array([xx1.ravel(), xx2.ravel()]).T)
-    Z = Z.reshape(xx1.shape)
-    plt.contourf(xx1, xx2, Z, alpha=0.3, cmap=cmap)
-    plt.xlim(xx1.min(),xx1.max())
-    plt.ylim(xx2.min(),xx2.max())
-
-    #plot class example
-    for idx, cl in enumerate(np.unique(y)):
-        plt.scatter(x=X[y== cl,0], y = X[y == cl, 1], alpha=0.8, c=colors[idx], marker=markers[idx], label=cl, edgecolor='black')
-    if test_idx:
-        #plot all examples
-        X_test, y_test, = X[test_idx, :], y[test_idx]
-        plt.scatter(X_test[:, 0], X_test[:,1], c='', edgecolor='black', alpha=1.0, linewidth=1, marker='o',s=100 ,label='test set')
-
 # Importar la info
+from sklearn import datasets
 cancer = datasets.load_breast_cancer()
-# Definicion de los datos correspondientes a las etiquetas
+print('Tipos de tumor: ',list(cancer.target_names))
 X = cancer.data
 y = cancer.target
-## Implementacion de regresion logistica
-    # Separar los datos de "Train" en entrenamiento y prueba para probar los algoritmos  
+
+#Separar datos de entrenamiento y prueba.
 from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1, stratify=y)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2,random_state=1)
 
-    #Escalar todos los datos
+#Escalar los datos
 from sklearn.preprocessing import StandardScaler
-escalar = StandardScaler()
-escalar.fit(X_train)
-X_train_std = escalar.transform(X_train)
-X_test_std = escalar.transform(X_test)
+escalar = StandardScaler()               # Estandarizar características eliminando la media y escalando a la varianza de la unidad
+escalar.fit(X_train)                     # Calcule la media y la estándar que se utilizarán para escalar posteriormente.
+X_train_std = escalar.transform(X_train) # Realice la estandarización centrando y escalando
+X_test_std  = escalar.transform(X_test)
 
-## Definicion del algoritmo a utilizar LOGISTIC REGRESSION
+# Definicion del algoritmo a utilizar "Logistic Regression"
 from sklearn.linear_model import LogisticRegression
-lr = LogisticRegression(C=100, random_state=1, solver='lbfgs',multi_class='auto')
-#entrenamiento del modelo
-lr.fit(X_train,y_train)
-y_pred = lr.predict(X_test)
-
-X_combined_std = np.vstack((X_train_std, X_test_std))
-y_combined = np.hstack((y_train, y_test))
-plot_decision_regions(X_combined_std ,y_combined, classifier=lr, test_idx=range(0,569))
-plt.show()
-#Verificacion
 from sklearn.metrics import confusion_matrix
-matriz = confusion_matrix(y_test, y_pred)
-print('Matriz de confusion:',matriz)
-
-#Calculo de precision del modelo
 from sklearn.metrics import precision_score
-precision = precision_score(y_test, y_pred)
-print('Precision del Modelo',precision)
-
-#Calculo exactitud modelo
 from sklearn.metrics import accuracy_score
-exactitud = accuracy_score(y_test,y_pred)
-print('Exactitud del Modelo', exactitud)
+from tabulate import tabulate
+import warnings
 
+""" solver {'newton-cg', 'lbfgs', 'liblinear', 'sag', 'saga'}, predeterminado = 'lbfgs'  Algoritmo a utilizar en el problema de optimización.
+Para conjuntos de datos pequeños, 'liblinear' es una buena opción, mientras que 'sag' y 'saga' son más rápidos para los grandes.
+Para problemas multiclase, solo 'newton-cg', 'sag', 'saga' y 'lbfgs' manejan la pérdida multinomial; 'liblinear' se limita a esquemas uno versus resto.
+'newton-cg', 'lbfgs', 'sag' y 'saga' manejan L2 o sin penalización
+'liblinear' y 'saga' también manejan la penalización L1
+'saga' también admite la penalización de 'elasticnet'
+'liblinear' no admite la configuración penalty='none' """
 
+""" multi_class {'auto', 'ovr', 'multinomial'}, predeterminado = 'auto'
+Si la opción elegida es 'ovr', entonces se ajusta un problema binario para cada etiqueta. 
+Para 'multinomial', la pérdida minimizada es el ajuste de pérdida multinomial en toda la distribución de probabilidad, incluso cuando los datos son binarios. 
+'multinomial' no está disponible cuando solver = 'liblinear'.
+'auto' selecciona 'ovr' si los datos son binarios, o si solver = 'liblinear', y de lo contrario selecciona 'multinomial'.
+ """
+solv   = ['newton-cg', 'liblinear', 'sag', 'saga']
+mclass = ['auto', 'ovr' , 'multinomial']# , 'multinomial'
+table = []
+warnings.filterwarnings("ignore")
 
+for s in solv:
+    for mc in mclass:
+        if mc=='multinomial':
+            if s=='liblinear':
+                break
+        lr = LogisticRegression(C=100, random_state =1,solver=s,multi_class=mc)
+        lr.fit(X_train, y_train)
+        y_pred = lr.predict(X_test)
+        #Verificacion
+        table.append([s,mc,"{:.3f}".format(precision_score(y_test, y_pred)*100),"{:.3f}".format(accuracy_score(y_test,y_pred)*100)])
+print(tabulate(table, headers = ['solver', 'multiclass', 'Precision', 'Exactitud']))       
+pd.write_csv()
