@@ -2,11 +2,11 @@
 # Tarea 1  **[DeadLine: 1 dic 2020]**
 ## *Nicolás Carrillo Sepulveda - Ingenieria Civil Telematica*
 <br><br>
-- 1. Describir "Logistic Regression" para mas de dos clases (Multinomial Logistic Regression)
+## 1. Describir "Logistic Regression" para mas de dos clases (Multinomial Logistic Regression)
 
 
 
-- 2. Identificar otra base de datos mas grande que iris y correr LR para CLASIFICAR utilizando:
+## 2. Identificar otra base de datos mas grande que iris y correr LR para CLASIFICAR utilizando:
 
 ## *Explicar la base de datos*  
 <BR>
@@ -126,4 +126,4 @@
 ### *AGREGAR COMENTARIOS* *
 <br><br>
 
-- 3. Comparar resultados destacando eventuales diferencias. Señale Overfitting (Si existe)
+## 3. Comparar resultados destacando eventuales diferencias. Señale Overfitting (Si existe)
