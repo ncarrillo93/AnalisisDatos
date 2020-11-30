@@ -12,12 +12,16 @@
 
 - 2. Identificar otra base de datos mas grande que iris y correr LR para CLASIFICAR utilizando:
 
-
 ## *Explicar la base de datos*  
+<BR>
 
-Tabla NewtonCg-Multinomial
+- **[OK]** 2.1. Otros algoritmos (no solo 'lbfgs')  
+- **[OK]** 2.2. MLR  (no solo "OVR") x2             
+- **[OK]** 2.3. otros valores de regularización (c) 
 
+<br><br><br>
 
+### **Tabla NewtonCg-Multinomial**
 | **C** | **solver** | **multiclass**   |  **Precision %** | **Exactitud %** | 
 | :------- | :------- | :------- | :------- | :------- |
 |      1 | newton-cg | multinomial   |      93.5065 |      95.614  |
@@ -27,11 +31,12 @@ Tabla NewtonCg-Multinomial
 |   1000 | newton-cg | multinomial   |      95.9459 |      96.4912 |
 |  10000 | newton-cg | multinomial   |      95.9459 |      96.4912 |
 | 100000 | newton-cg | multinomial   |      95.9459 |      96.4912 |
+<br>
 
 ### *AGREGAR COMENTARIOS* *
-#
+<br><br>
 
-### **Tabla NewtonCg-Multinomial** 
+### **Tabla NewtonCg-Ovr** 
 | **C** | **solver** | **multiclass**   |  **Precision %** | **Exactitud %** |
 | :------- | :------- | :------- | :------- | :------- |
 |      1 | newton-cg | ovr           |      93.4211 |      94.7368 |
@@ -41,8 +46,12 @@ Tabla NewtonCg-Multinomial
 |   1000 | newton-cg | ovr           |      95.9459 |      96.4912 |
 |  10000 | newton-cg | ovr           |      95.9459 |      96.4912 |
 | 100000 | newton-cg | ovr           |      95.9459 |      96.4912 |
+<br>
+
 ### *AGREGAR COMENTARIOS* *
-#
+<br><br>
+
+### **Tabla liblinear-Ovr** 
 | **C** | **solver** | **multiclass**   |  **Precision %** | **Exactitud %** |
 | :------- | :------- | :------- | :------- | :------- |
 |      1 | liblinear | ovr           |      93.5065 |      95.614  |
@@ -52,8 +61,13 @@ Tabla NewtonCg-Multinomial
 |   1000 | liblinear | ovr           |      95.9459 |      96.4912 |
 |  10000 | liblinear | ovr           |      95.9459 |      96.4912 |
 | 100000 | liblinear | ovr           |      95.9459 |      96.4912 |
+<br>
+
 ### *AGREGAR COMENTARIOS* *
-#
+<br><br>
+
+
+### **Tabla Sag-Multinomial**
 | **C** | **solver** | **multiclass**   |  **Precision %** | **Exactitud %** |
 | :------- | :------- | :------- | :------- | :------- |
 |      1 | sag       | multinomial   |      90.9091 |      92.1053 |
@@ -63,8 +77,13 @@ Tabla NewtonCg-Multinomial
 |   1000 | sag       | multinomial   |      90.9091 |      92.1053 |
 |  10000 | sag       | multinomial   |      90.9091 |      92.1053 |
 | 100000 | sag       | multinomial   |      90.9091 |      92.1053 |
+<br>
+
 ### *AGREGAR COMENTARIOS* *
-#
+<br><br>
+
+
+### **Tabla Sag-Ovr**
 | **C** | **solver** | **multiclass**   |  **Precision %** | **Exactitud %** |
 | :------- | :------- | :------- | :------- | :------- |
 |      1 | sag       | ovr           |      89.7436 |      91.2281 |
@@ -74,8 +93,13 @@ Tabla NewtonCg-Multinomial
 |   1000 | sag       | ovr           |      89.7436 |      91.2281 |
 |  10000 | sag       | ovr           |      89.7436 |      91.2281 |
 | 100000 | sag       | ovr           |      89.7436 |      91.2281 |
+<br>
+
 ### *AGREGAR COMENTARIOS* *
-#
+<br><br>
+
+
+### **Tabla Sag-Multinomial**
 | **C** | **solver** | **multiclass**   |  **Precision %** | **Exactitud %** |
 | :------- | :------- | :------- | :------- | :------- |
 |      1 | saga      | multinomial   |      89.7436 |      91.2281 |
@@ -85,8 +109,13 @@ Tabla NewtonCg-Multinomial
 |   1000 | saga      | multinomial   |      89.7436 |      91.2281 |
 |  10000 | saga      | multinomial   |      89.7436 |      91.2281 |
 | 100000 | saga      | multinomial   |      89.7436 |      91.2281 |
+<br>
+
 ### *AGREGAR COMENTARIOS* *
-#
+<br><br>
+
+
+### **Tabla Sag-Multinomial**
 | **C** | **solver** | **multiclass**   |  **Precision %** | **Exactitud %** |
 | :------- | :------- | :------- | :------- | :------- |
 |      1 | saga      | ovr           |      84.5238 |      87.7193 |
@@ -96,10 +125,9 @@ Tabla NewtonCg-Multinomial
 |   1000 | saga      | ovr           |      84.5238 |      87.7193 |
 |  10000 | saga      | ovr           |      84.5238 |      87.7193 |
 | 100000 | saga      | ovr           |      84.5238 |      87.7193 |
+<br>
+
 ### *AGREGAR COMENTARIOS* *
-#
-      - 2.1. Otros algoritmos (no solo 'lbfgs')
- - 2.2. MLR  (no solo "OVR") x2
-        - 2.3. otros valores de regularización (c)
+<br><br>
 
 - 3. Comparar resultados destacando eventuales diferencias. Señale Overfitting (Si existe)
