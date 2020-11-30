@@ -1,7 +1,6 @@
-# Tarea para 1 dic 2020
 
-## Nicolás Carrillo Sepulveda
-### Ingenieria Civil Telematica
+# Tarea 1  **[Deadlline: 1 dic 2020]**
+## *Nicolás Carrillo Sepulveda - Ingenieria Civil Telematica*
 
 
 
