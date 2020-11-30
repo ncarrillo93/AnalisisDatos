@@ -8,10 +8,16 @@
 
 - 1. Describir "Logistic Regression" para mas de dos clases (Multinomial Logistic Regression)
 
+
+
 - 2. Identificar otra base de datos mas grande que iris y correr LR para CLASIFICAR utilizando:
 
 
-### **Tabla NewtonCg-Multinomial** 
+## *Explicar la base de datos*  
+
+Tabla NewtonCg-Multinomial
+
+
 | **C** | **solver** | **multiclass**   |  **Precision %** | **Exactitud %** | 
 | :------- | :------- | :------- | :------- | :------- |
 |      1 | newton-cg | multinomial   |      93.5065 |      95.614  |
@@ -21,7 +27,11 @@
 |   1000 | newton-cg | multinomial   |      95.9459 |      96.4912 |
 |  10000 | newton-cg | multinomial   |      95.9459 |      96.4912 |
 | 100000 | newton-cg | multinomial   |      95.9459 |      96.4912 |
+
+### *AGREGAR COMENTARIOS* *
 #
+
+### **Tabla NewtonCg-Multinomial** 
 | **C** | **solver** | **multiclass**   |  **Precision %** | **Exactitud %** |
 | :------- | :------- | :------- | :------- | :------- |
 |      1 | newton-cg | ovr           |      93.4211 |      94.7368 |
@@ -31,6 +41,7 @@
 |   1000 | newton-cg | ovr           |      95.9459 |      96.4912 |
 |  10000 | newton-cg | ovr           |      95.9459 |      96.4912 |
 | 100000 | newton-cg | ovr           |      95.9459 |      96.4912 |
+### *AGREGAR COMENTARIOS* *
 #
 | **C** | **solver** | **multiclass**   |  **Precision %** | **Exactitud %** |
 | :------- | :------- | :------- | :------- | :------- |
@@ -41,6 +52,7 @@
 |   1000 | liblinear | ovr           |      95.9459 |      96.4912 |
 |  10000 | liblinear | ovr           |      95.9459 |      96.4912 |
 | 100000 | liblinear | ovr           |      95.9459 |      96.4912 |
+### *AGREGAR COMENTARIOS* *
 #
 | **C** | **solver** | **multiclass**   |  **Precision %** | **Exactitud %** |
 | :------- | :------- | :------- | :------- | :------- |
@@ -51,6 +63,7 @@
 |   1000 | sag       | multinomial   |      90.9091 |      92.1053 |
 |  10000 | sag       | multinomial   |      90.9091 |      92.1053 |
 | 100000 | sag       | multinomial   |      90.9091 |      92.1053 |
+### *AGREGAR COMENTARIOS* *
 #
 | **C** | **solver** | **multiclass**   |  **Precision %** | **Exactitud %** |
 | :------- | :------- | :------- | :------- | :------- |
@@ -61,6 +74,7 @@
 |   1000 | sag       | ovr           |      89.7436 |      91.2281 |
 |  10000 | sag       | ovr           |      89.7436 |      91.2281 |
 | 100000 | sag       | ovr           |      89.7436 |      91.2281 |
+### *AGREGAR COMENTARIOS* *
 #
 | **C** | **solver** | **multiclass**   |  **Precision %** | **Exactitud %** |
 | :------- | :------- | :------- | :------- | :------- |
@@ -71,6 +85,7 @@
 |   1000 | saga      | multinomial   |      89.7436 |      91.2281 |
 |  10000 | saga      | multinomial   |      89.7436 |      91.2281 |
 | 100000 | saga      | multinomial   |      89.7436 |      91.2281 |
+### *AGREGAR COMENTARIOS* *
 #
 | **C** | **solver** | **multiclass**   |  **Precision %** | **Exactitud %** |
 | :------- | :------- | :------- | :------- | :------- |
@@ -81,6 +96,7 @@
 |   1000 | saga      | ovr           |      84.5238 |      87.7193 |
 |  10000 | saga      | ovr           |      84.5238 |      87.7193 |
 | 100000 | saga      | ovr           |      84.5238 |      87.7193 |
+### *AGREGAR COMENTARIOS* *
 #
       - 2.1. Otros algoritmos (no solo 'lbfgs')
  - 2.2. MLR  (no solo "OVR") x2
