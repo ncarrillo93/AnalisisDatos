@@ -1,6 +1,6 @@
 
 # Tarea 1  **[DeadLine: 1 dic 2020]**
-## *Nicolás Carrillo Sepulveda - Ingenieria Civil Telematica*
+*Nicolás Carrillo Sepulveda - Ingenieria Civil Telematica*
 <br><br>
 ## 1. Describir "Logistic Regression" para mas de dos clases (Multinomial Logistic Regression)
 
