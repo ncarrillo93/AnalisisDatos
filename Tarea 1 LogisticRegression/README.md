@@ -3,12 +3,12 @@
 *Nicolás Carrillo Sepulveda - Ingenieria Civil Telematica*
 <br><br>
 ## 1. Describir "Logistic Regression" para mas de dos clases (Multinomial Logistic Regression)
-
+<br>
 
 
 ## 2. Identificar otra base de datos mas grande que iris y correr LR para CLASIFICAR utilizando:
-
-## *Explicar la base de datos*  
+<br>
+ *Explicar la base de datos*  
 <BR>
 
 - **[OK]** 2.1. Otros algoritmos (no solo 'lbfgs')  
@@ -29,7 +29,7 @@
 | 100000 | newton-cg | multinomial   |      95.9459 |      96.4912 |
 <br>
 
-### *AGREGAR COMENTARIOS* *
+*AGREGAR COMENTARIOS* *
 <br><br>
 
 ### **Tabla NewtonCg-Ovr** 
@@ -44,7 +44,7 @@
 | 100000 | newton-cg | ovr           |      95.9459 |      96.4912 |
 <br>
 
-### *AGREGAR COMENTARIOS* *
+*AGREGAR COMENTARIOS* *
 <br><br>
 
 ### **Tabla liblinear-Ovr** 
@@ -59,7 +59,7 @@
 | 100000 | liblinear | ovr           |      95.9459 |      96.4912 |
 <br>
 
-### *AGREGAR COMENTARIOS* *
+*AGREGAR COMENTARIOS* *
 <br><br>
 
 
@@ -75,7 +75,7 @@
 | 100000 | sag       | multinomial   |      90.9091 |      92.1053 |
 <br>
 
-### *AGREGAR COMENTARIOS* *
+*AGREGAR COMENTARIOS* *
 <br><br>
 
 
@@ -91,7 +91,7 @@
 | 100000 | sag       | ovr           |      89.7436 |      91.2281 |
 <br>
 
-### *AGREGAR COMENTARIOS* *
+*AGREGAR COMENTARIOS* *
 <br><br>
 
 
@@ -107,7 +107,7 @@
 | 100000 | saga      | multinomial   |      89.7436 |      91.2281 |
 <br>
 
-### *AGREGAR COMENTARIOS* *
+*AGREGAR COMENTARIOS* *
 <br><br>
 
 
@@ -123,7 +123,7 @@
 | 100000 | saga      | ovr           |      84.5238 |      87.7193 |
 <br>
 
-### *AGREGAR COMENTARIOS* *
+ *AGREGAR COMENTARIOS* *
 <br><br>
 
 ## 3. Comparar resultados destacando eventuales diferencias. Señale Overfitting (Si existe)
