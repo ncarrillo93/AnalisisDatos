@@ -18,15 +18,6 @@
 <br><br><br>
 
 ### **Tabla NewtonCg-Multinomial**
-| **C** | **solver** | **multiclass** | **Exactitud %** | 
-| :------- | :------- | :------- | :------- |
-|   1 | newton-cg | multinomial   |      91.2281 |
-|   5 | newton-cg | multinomial   |      91.2281 |
-|  10 | newton-cg | multinomial   |      91.2281 |
-|  20 | newton-cg | multinomial   |      91.2281 |
-|  50 | newton-cg | multinomial   |      91.2281 |
-| 100 | newton-cg | multinomial   |      91.2281 |
-| 500 | newton-cg | multinomial   |      91.2281 |
 <br>
 
 ![](gif/newton_Multinomial.gif)
@@ -36,15 +27,6 @@
 <br><br>
 
 ### **Tabla NewtonCg-Ovr** 
-| **C** | **solver** | **multiclass** | **Exactitud %** |
-| :------- | :------- | :------- | :------- |
-|   1 | newton-cg | ovr           |      91.2281 |
-|   5 | newton-cg | ovr           |      91.2281 |
-|  10 | newton-cg | ovr           |      91.2281 |
-|  20 | newton-cg | ovr           |      91.2281 |
-|  50 | newton-cg | ovr           |      91.2281 |
-| 100 | newton-cg | ovr           |      91.2281 |
-| 500 | newton-cg | ovr           |      91.2281 |
 <br>
 
 ![](gif/newton_ovr.gif)
@@ -56,15 +38,6 @@
 <br><br>
 
 ### **Tabla liblinear-Ovr** 
-| **C** | **solver** | **multiclass** | **Exactitud %** |
-| :------- | :------- | :------- | :------- |
-|   1 | liblinear | ovr           |      91.2281 |
-|   5 | liblinear | ovr           |      91.2281 |
-|  10 | liblinear | ovr           |      91.2281 |
-|  20 | liblinear | ovr           |      91.2281 |
-|  50 | liblinear | ovr           |      91.2281 |
-| 100 | liblinear | ovr           |      91.2281 |
-| 500 | liblinear | ovr           |      91.2281 |
 <br>
 
 ![](gif/liblinear_ovr.gif)
@@ -75,15 +48,6 @@
 
 
 ### **Tabla Sag-Multinomial**
-| **C** | **solver** | **multiclass** | **Exactitud %** |
-| :------- | :------- | :------- | :------- |
-|   1 | sag       | multinomial   |      91.2281 |
-|   5 | sag       | multinomial   |      91.2281 |
-|  10 | sag       | multinomial   |      91.2281 |
-|  20 | sag       | multinomial   |      91.2281 |
-|  50 | sag       | multinomial   |      91.2281 |
-| 100 | sag       | multinomial   |      91.2281 |
-| 500 | sag       | multinomial   |      91.2281 |
 <br>
 
 ![](gif/sag_Multinomial.gif)
@@ -95,15 +59,6 @@
 
 
 ### **Tabla Sag-Ovr**
-| **C** | **solver** | **multiclass** | **Exactitud %** |
-| :------- | :------- | :------- | :------- |
-|   1 | sag       | ovr           |      91.2281 |
-|   5 | sag       | ovr           |      91.2281 |
-|  10 | sag       | ovr           |      91.2281 |
-|  20 | sag       | ovr           |      91.2281 |
-|  50 | sag       | ovr           |      91.2281 |
-| 100 | sag       | ovr           |      91.2281 |
-| 500 | sag       | ovr           |      91.2281 |
 <br>
 
 ![](gif/sag_ovr.gif)
@@ -114,15 +69,6 @@
 
 
 ### **Tabla Saga-Multinomial**
-| **C** | **solver** | **multiclass** | **Exactitud %** |
-| :------- | :------- | :------- | :------- |
-|   1 | saga      | multinomial   |      91.2281 |
-|   5 | saga      | multinomial   |      91.2281 |
-|  10 | saga      | multinomial   |      91.2281 |
-|  20 | saga      | multinomial   |      91.2281 |
-|  50 | saga      | multinomial   |      91.2281 |
-| 100 | saga      | multinomial   |      91.2281 |
-| 500 | saga      | multinomial   |      91.2281 |
 <br>
 
 ![](gif/saga_Multinomial.gif)
@@ -131,17 +77,7 @@
 *AGREGAR COMENTARIOS* *
 <br><br>
 
-
 ### **Tabla Saga-Ovr**
-| **C** | **solver** | **multiclass** | **Exactitud %** |
-| :------- | :------- | :------- | :------- |
-|   1 | saga      | ovr           |      91.2281 |
-|   5 | saga      | ovr           |      91.2281 |
-|  10 | saga      | ovr           |      91.2281 |
-|  20 | saga      | ovr           |      91.2281 |
-|  50 | saga      | ovr           |      91.2281 |
-| 100 | saga      | ovr           |      91.2281 |
-| 500 | saga      | ovr           |      91.2281 |
 <br>
 
 ![](gif/saga_ovr.gif)
