@@ -1,9 +1,15 @@
-
 # Tarea 1  **[DeadLine: 1 dic 2020]**
 *Nicolás Carrillo Sepulveda - Ingenieria Civil Telematica*
 <br><br>
-## 1. Describir "Logistic Regression" para mas de dos clases (Multinomial Logistic Regression)
+## Regresion Logistica Multiple
 <br>
+La regresion losgistica multiple es una generalización de la ya estudiada regresión logística simple. Esta se basa en los mismos principios pero amplia el número de predictores. Los que pueden ser continuos como categoricos.
+
+
+
+
+
+
 
 
 ## 2. Identificar otra base de datos mas grande que iris y correr LR para CLASIFICAR utilizando:
@@ -127,3 +133,5 @@
 <br><br>
 
 ## 3. Comparar resultados destacando eventuales diferencias. Señale Overfitting (Si existe)
+
+No se ve presencia de ovefitting en ninguno de los casos. Pero se podria plantear que al ser un metodo lineal existiria undefitting. (aunque los porcentajes son bastante altos en algunos casos)
