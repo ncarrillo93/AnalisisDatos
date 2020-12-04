@@ -3,135 +3,118 @@
 <br><br>
 ## Regresion Logistica Multiple
 <br>
-La regresion losgistica multiple es una generalización de la ya estudiada regresión logística simple. Esta se basa en los mismos principios pero amplia el número de predictores. Los que pueden ser continuos como categoricos.
 
+### La regresion losgistica multiple es una generalización de la regresion logistica ya estudiada. En esta su variable dependiente no esta restringida a solo dos categorias. 
 
+### Por ejemplo, un estudio de cine necesita saber cual de sus peliculas sera la mas vista. Para esto usa una regresion logistica multiple o multinomial para determinar si la edad, el genero y las relaciones de pareja de cada persona sobre la pelicula que les gusta.
+### Con este ejemplo se puede observar que la "salida" en el proceso de regresion logistica multiple tendra mas de dos, y estara "alimentado" por distinto tipos de parametros ###
 
-
-
-
-
+<br><br>
 
 ## 2. Identificar otra base de datos mas grande que iris y correr LR para CLASIFICAR utilizando:
-<br>
- *Explicar la base de datos*  
-<BR>
 
-- **[OK]** 2.1. Otros algoritmos (no solo 'lbfgs')  
-- **[OK]** 2.2. MLR  (no solo "OVR") x2             
-- **[OK]** 2.3. otros valores de regularización (c) 
+<br>
+
+ ### La base de datos utilizada es acerca de cancer de mama. Este posee datos de tumores, que tienen diez caracteristicas para cada tumor. En este caso se utilizo el radio promedio y el peor radio.  ###
+ 
+<br><br>
+
+### **Graficos Lbfgs-Multinomial**
+
+[1]: gif/lbfgs-multinomial.gif
+[2]: img2/lr_lbfgs_multinomial.png
+![][1] ![][2]
+
+<br>
+
+### **Graficos Lbfgs-Multinomial**
+<br>
+
+[1]: gif/lbfgs-ovr.gif
+[2]: img2/lr_lbfgs_ovr.png
+![][1] ![][2]
+
+### **Tabla NewtonCg-Multinomial**
+<br>
+
+[1]: gif/newton_Multinomial.gif
+[2]: img2/lr_newton_multinomial.png
+![][1] ![][2]
+
+#### *figura: Animación de regresion logistica con solver "Newton-cg" y multiclass "multinomial".*
 
 <br><br><br>
 
-### **Tabla NewtonCg-Multinomial**
-| **C** | **solver** | **multiclass**   |  **Precision %** | **Exactitud %** | 
-| :------- | :------- | :------- | :------- | :------- |
-|      1 | newton-cg | multinomial   |      93.5065 |      95.614  |
-|     10 | newton-cg | multinomial   |      94.7368 |      96.4912 |
-|     50 | newton-cg | multinomial   |      96      |      97.3684 |
-|    100 | newton-cg | multinomial   |      96      |      97.3684 |
-|   1000 | newton-cg | multinomial   |      95.9459 |      96.4912 |
-|  10000 | newton-cg | multinomial   |      95.9459 |      96.4912 |
-| 100000 | newton-cg | multinomial   |      95.9459 |      96.4912 |
-<br>
-
-*AGREGAR COMENTARIOS* *
-<br><br>
-
 ### **Tabla NewtonCg-Ovr** 
-| **C** | **solver** | **multiclass**   |  **Precision %** | **Exactitud %** |
-| :------- | :------- | :------- | :------- | :------- |
-|      1 | newton-cg | ovr           |      93.4211 |      94.7368 |
-|     10 | newton-cg | ovr           |      93.5065 |      95.614  |
-|     50 | newton-cg | ovr           |      94.7368 |      96.4912 |
-|    100 | newton-cg | ovr           |      96      |      97.3684 |
-|   1000 | newton-cg | ovr           |      95.9459 |      96.4912 |
-|  10000 | newton-cg | ovr           |      95.9459 |      96.4912 |
-| 100000 | newton-cg | ovr           |      95.9459 |      96.4912 |
 <br>
+
+![](gif/newton_ovr.gif)
+
+[1]: gif/newton_ovr.gif
+[2]: img2/lr_newton_ovr.png
+![][1] ![][2]
+
+#### *figura: Animación de regresion logistica con solver "Newton-cg" y multiclass "Ovr".*
+
 
 *AGREGAR COMENTARIOS* *
 <br><br>
 
 ### **Tabla liblinear-Ovr** 
-| **C** | **solver** | **multiclass**   |  **Precision %** | **Exactitud %** |
-| :------- | :------- | :------- | :------- | :------- |
-|      1 | liblinear | ovr           |      93.5065 |      95.614  |
-|     10 | liblinear | ovr           |      96      |      97.3684 |
-|     50 | liblinear | ovr           |      95.9459 |      96.4912 |
-|    100 | liblinear | ovr           |      95.9459 |      96.4912 |
-|   1000 | liblinear | ovr           |      95.9459 |      96.4912 |
-|  10000 | liblinear | ovr           |      95.9459 |      96.4912 |
-| 100000 | liblinear | ovr           |      95.9459 |      96.4912 |
 <br>
+
+![](gif/liblinear-ovr.gif)
+#### *figura: Animación de regresion logistica con solver "liblinear" y multiclass "ovr" donde C varia de 1 a 500.*
 
 *AGREGAR COMENTARIOS* *
 <br><br>
 
 
 ### **Tabla Sag-Multinomial**
-| **C** | **solver** | **multiclass**   |  **Precision %** | **Exactitud %** |
-| :------- | :------- | :------- | :------- | :------- |
-|      1 | sag       | multinomial   |      90.9091 |      92.1053 |
-|     10 | sag       | multinomial   |      90.9091 |      92.1053 |
-|     50 | sag       | multinomial   |      90.9091 |      92.1053 |
-|    100 | sag       | multinomial   |      90.9091 |      92.1053 |
-|   1000 | sag       | multinomial   |      90.9091 |      92.1053 |
-|  10000 | sag       | multinomial   |      90.9091 |      92.1053 |
-| 100000 | sag       | multinomial   |      90.9091 |      92.1053 |
 <br>
+
+![](gif/sag-multinomial.gif)
+#### *figura: Animación de regresion logistica con solver "Sag" y multiclass "Multinomial" donde C varia de 1 a 500.*
+
 
 *AGREGAR COMENTARIOS* *
 <br><br>
 
 
-### **Tabla Sag-Ovr**
-| **C** | **solver** | **multiclass**   |  **Precision %** | **Exactitud %** |
-| :------- | :------- | :------- | :------- | :------- |
-|      1 | sag       | ovr           |      89.7436 |      91.2281 |
-|     10 | sag       | ovr           |      89.7436 |      91.2281 |
-|     50 | sag       | ovr           |      89.7436 |      91.2281 |
-|    100 | sag       | ovr           |      89.7436 |      91.2281 |
-|   1000 | sag       | ovr           |      89.7436 |      91.2281 |
-|  10000 | sag       | ovr           |      89.7436 |      91.2281 |
-| 100000 | sag       | ovr           |      89.7436 |      91.2281 |
+### **Grafico Sag-Ovr**
 <br>
+
+![](gif/sag_ovr.gif)
+#### *figura: Animación de regresion logistica con solver "sag" y multiclass "ovr" donde C varia de 1 a 500.*
 
 *AGREGAR COMENTARIOS* *
 <br><br>
 
 
-### **Tabla Sag-Multinomial**
-| **C** | **solver** | **multiclass**   |  **Precision %** | **Exactitud %** |
-| :------- | :------- | :------- | :------- | :------- |
-|      1 | saga      | multinomial   |      89.7436 |      91.2281 |
-|     10 | saga      | multinomial   |      89.7436 |      91.2281 |
-|     50 | saga      | multinomial   |      89.7436 |      91.2281 |
-|    100 | saga      | multinomial   |      89.7436 |      91.2281 |
-|   1000 | saga      | multinomial   |      89.7436 |      91.2281 |
-|  10000 | saga      | multinomial   |      89.7436 |      91.2281 |
-| 100000 | saga      | multinomial   |      89.7436 |      91.2281 |
+### **Grafico Saga-Multinomial**
 <br>
+
+![](gif/saga-multinomial.gif)
+#### *figura: Animación de regresion logistica con solver "Saga" y multiclass "Multinomial" donde C varia de 1 a 500.*
 
 *AGREGAR COMENTARIOS* *
 <br><br>
 
-
-### **Tabla Sag-Multinomial**
-| **C** | **solver** | **multiclass**   |  **Precision %** | **Exactitud %** |
-| :------- | :------- | :------- | :------- | :------- |
-|      1 | saga      | ovr           |      84.5238 |      87.7193 |
-|     10 | saga      | ovr           |      84.5238 |      87.7193 |
-|     50 | saga      | ovr           |      84.5238 |      87.7193 |
-|    100 | saga      | ovr           |      84.5238 |      87.7193 |
-|   1000 | saga      | ovr           |      84.5238 |      87.7193 |
-|  10000 | saga      | ovr           |      84.5238 |      87.7193 |
-| 100000 | saga      | ovr           |      84.5238 |      87.7193 |
+### **Grafico Saga-Ovr**
 <br>
 
- *AGREGAR COMENTARIOS* *
+![](gif/saga-ovr.gif)
+#### *figura: Animación de regresion logistica con solver "Sag" y multiclass "Multinomial".*
+
+ ### Comentarios:
+
+ - Para poder observar la la precisión en el grafico animado. se genero un arreglo con diversos vaolres de C entre 0 a 1, y al final valores entre 1 y 5000.
+
+ - Se puede observar que la precisión nunca llega a un 100% en ningun caso. Porque el metodo de regresión logica no llega nunca a separar todos los "puntos" en la grafica.
+
+ - Si bien ninguna combinación llega a converger. Los resultados muestran que separa relativamente bien los dos grupos de tumores (Malgino y Benigno)
+
 <br><br>
 
-## 3. Comparar resultados destacando eventuales diferencias. Señale Overfitting (Si existe)
-
-No se ve presencia de ovefitting en ninguno de los casos. Pero se podria plantear que al ser un metodo lineal existiria undefitting. (aunque los porcentajes son bastante altos en algunos casos)
+## Overfitting?
+- En ninguno de los casos analizados se ve presencia de ovefitting en ninguno de los casos. Pero se podria plantear que al ser un metodo lineal existiria undefitting. (aunque los porcentajes son bastante altos en algunos casos)
